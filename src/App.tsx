@@ -8,10 +8,10 @@ const App: React.FC = () => {
       <Layout>
         <main className="fillHeight">
           <Hero />
+          <Jobs />
           <About />
           <Featured />
           <Skills />
-          <Jobs />
           <Projects />
           <Contact />
         </main>
