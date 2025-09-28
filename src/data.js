@@ -115,12 +115,30 @@ export const featuredData = [
 ];
 
 export const skillsData = {
-  languages: ["Python", "SQL", "C++"],
-  ml_dl: ["Scikit-learn", "TensorFlow", "Keras"],
-  generative_ai: ["Hugging Face Transformers", "LangChain", "LlamaIndex", "OpenAI API", "FAISS", "Chroma"],
-  multimodal_ai: ["Whisper", "OpenCV", "MediaPipe"],
-  data_science: ["Regression", "Classification", "Decision Trees", "Random Forest", "Gradient Boosting", "Ensemble Methods"],
-  libraries_tools: ["Pandas", "NumPy", "Matplotlib", "Git", "Docker", "Streamlit"]
+  core: {
+    title: "Core Technologies",
+    skills: ["Python", "SQL", "C++", "Machine Learning", "Deep Learning", "Data Science"]
+  },
+  ai_ml: {
+    title: "AI/ML Frameworks",
+    skills: ["TensorFlow", "Keras", "Scikit-learn", "Hugging Face", "LangChain", "LlamaIndex"]
+  },
+  generative_ai: {
+    title: "Generative AI & RAG",
+    skills: ["OpenAI API", "FAISS", "Chroma", "Vector Databases", "LLMs", "Retrieval-Augmented Generation"]
+  },
+  computer_vision: {
+    title: "Computer Vision & Multimodal",
+    skills: ["OpenCV", "MediaPipe", "Whisper", "Speech Recognition", "Image Processing"]
+  },
+  data_tools: {
+    title: "Data & Development Tools",
+    skills: ["Pandas", "NumPy", "Matplotlib", "Git", "Docker", "Streamlit", "Jupyter"]
+  },
+  algorithms: {
+    title: "ML Algorithms & Methods",
+    skills: ["Random Forest", "Gradient Boosting", "Regression", "Classification", "Ensemble Methods", "Feature Engineering"]
+  }
 };
 
 export const siteMetadata = {

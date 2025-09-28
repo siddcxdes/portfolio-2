@@ -6,80 +6,100 @@ import { usePrefersReducedMotion } from '../../hooks';
 import { skillsData } from '../../data';
 
 const StyledSkillsSection = styled.section`
-  max-width: 900px;
+  max-width: 1000px;
 
-  .inner {
+  .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 
     @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+      grid-template-columns: 1fr;
+      gap: 25px;
     }
+  }
+`;
+
+const StyledSkillCategory = styled.div`
+  background: var(--light-navy);
+  border-radius: 8px;
+  padding: 25px;
+  border: 1px solid var(--lightest-navy);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    border-color: var(--green);
+  }
+`;
+
+const StyledCategoryTitle = styled.h3`
+  color: var(--green);
+  font-size: var(--fz-lg);
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: var(--font-mono);
+  position: relative;
+  padding-left: 20px;
+
+  &:before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: var(--fz-lg);
   }
 `;
 
 const StyledSkillsGrid = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-height: 140px;
-  background: var(--light-navy);
-  padding: 15px;
-  border-radius: 6px;
-  border: 1px solid var(--lightest-navy);
-  transition: var(--transition);
-
-  &:hover {
-    background: var(--lightest-navy);
-    transform: translateY(-2px);
-  }
-`;
-
-const StyledSkillsTitle = styled.h3`
-  font-size: var(--fz-xl);
-  font-weight: 600;
-  color: var(--lightest-slate);
-  margin-bottom: 12px;
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 16px;
-    background: var(--green);
-    border-radius: 2px;
-  }
-`;
-
-const StyledSkillsList = styled.ul`
-  display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 10px;
 `;
 
-const StyledSkillItem = styled.li`
-  background: var(--light-navy);
+const StyledSkillTag = styled.span`
+  background: var(--navy);
   color: var(--slate);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: var(--fz-xs);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: var(--fz-sm);
   font-family: var(--font-mono);
+  font-weight: 500;
   border: 1px solid var(--lightest-navy);
-  transition: var(--transition);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: default;
 
   &:hover {
-    background: var(--lightest-navy);
-    color: var(--lightest-slate);
-    transform: translateY(-1px);
+    background: var(--green);
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(100, 255, 218, 0.2);
+  }
+`;
+
+const StyledHighlightSection = styled.div`
+  text-align: center;
+  margin-top: 60px;
+  padding: 30px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--light-navy) 100%);
+  border-radius: 12px;
+  border: 1px solid var(--green);
+
+  h3 {
+    color: var(--green);
+    font-size: var(--fz-xl);
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
+  }
+
+  p {
+    color: var(--slate);
+    font-size: var(--fz-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
 `;
 
@@ -99,31 +119,33 @@ const Skills = () => {
     );
   }, [prefersReducedMotion]);
 
-  const skillCategories = [
-    { title: 'Languages', skills: skillsData.languages },
-    { title: 'ML/DL', skills: skillsData.ml_dl },
-    { title: 'Generative AI', skills: skillsData.generative_ai },
-    { title: 'Multimodal AI', skills: skillsData.multimodal_ai },
-    { title: 'Data Science', skills: skillsData.data_science },
-    { title: 'Libraries & Tools', skills: skillsData.libraries_tools },
-  ];
+  const skillCategories = Object.values(skillsData);
 
   return (
     <StyledSkillsSection id="skills" ref={revealTitle}>
       <h2 className="numbered-heading">Skills & Technologies</h2>
 
-      <div className="inner">
+      <div className="skills-container">
         {skillCategories.map((category, i) => (
-          <StyledSkillsGrid key={i} ref={el => (revealSkills.current[i] = el)}>
-            <StyledSkillsTitle>{category.title}</StyledSkillsTitle>
-            <StyledSkillsList>
+          <StyledSkillCategory key={i} ref={el => (revealSkills.current[i] = el)}>
+            <StyledCategoryTitle>{category.title}</StyledCategoryTitle>
+            <StyledSkillsGrid>
               {category.skills.map((skill, j) => (
-                <StyledSkillItem key={j}>{skill}</StyledSkillItem>
+                <StyledSkillTag key={j}>{skill}</StyledSkillTag>
               ))}
-            </StyledSkillsList>
-          </StyledSkillsGrid>
+            </StyledSkillsGrid>
+          </StyledSkillCategory>
         ))}
       </div>
+
+      <StyledHighlightSection ref={el => (revealSkills.current[skillCategories.length] = el)}>
+        <h3>Specialized in AI/ML Engineering</h3>
+        <p>
+          Passionate about building intelligent systems with expertise in LLMs, RAG systems, 
+          computer vision, and end-to-end machine learning pipelines. Always exploring the 
+          latest in generative AI and multimodal applications.
+        </p>
+      </StyledHighlightSection>
     </StyledSkillsSection>
   );
 };
