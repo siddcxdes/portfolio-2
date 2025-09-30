@@ -6,99 +6,97 @@ import { usePrefersReducedMotion } from '../../hooks';
 import { skillsData } from '../../data';
 
 const StyledSkillsSection = styled.section`
-  max-width: 1000px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 60px 0;
 
-  .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: var(--slate);
+    text-align: left;
+    letter-spacing: -0.5px;
   }
 `;
 
-const StyledSkillCategory = styled.div`
-  background: var(--light-navy);
-  border-radius: 8px;
-  padding: 25px;
+const StyledSkillsList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+`;
+
+const StyledSkillCategory = styled.li`
+  flex: 1 1 220px;
+  min-width: 180px;
+  background: var(--navy);
   border: 1px solid var(--lightest-navy);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 6px;
+  padding: 18px 20px;
+  box-shadow: none;
+  transition: border 0.2s;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px -15px var(--navy-shadow);
     border-color: var(--green);
   }
 `;
 
 const StyledCategoryTitle = styled.h3`
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--green);
-  font-size: var(--fz-lg);
-  font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-family: var(--font-mono);
-  position: relative;
-  padding-left: 20px;
-
-  &:before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--green);
-    font-size: var(--fz-lg);
-  }
+  letter-spacing: 0.5px;
 `;
 
 const StyledSkillsGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 `;
 
 const StyledSkillTag = styled.span`
-  background: var(--navy);
+  background: transparent;
   color: var(--slate);
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: var(--fz-sm);
-  font-family: var(--font-mono);
-  font-weight: 500;
   border: 1px solid var(--lightest-navy);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  transition: border 0.2s;
   cursor: default;
 
   &:hover {
-    background: var(--green);
-    color: var(--navy);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(100, 255, 218, 0.2);
+    border-color: var(--green);
+    color: var(--green);
   }
 `;
 
 const StyledHighlightSection = styled.div`
-  text-align: center;
-  margin-top: 60px;
-  padding: 30px;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--light-navy) 100%);
-  border-radius: 12px;
-  border: 1px solid var(--green);
+  margin-top: 32px;
+  padding: 18px 20px;
+  background: var(--navy);
+  border-radius: 6px;
+  border: 1px solid var(--lightest-navy);
+  text-align: left;
 
   h3 {
     color: var(--green);
-    font-size: var(--fz-xl);
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
     font-family: var(--font-mono);
+    font-weight: 500;
   }
 
   p {
     color: var(--slate);
-    font-size: var(--fz-lg);
-    max-width: 600px;
-    margin: 0 auto;
+    font-size: 1rem;
+    margin: 0;
     line-height: 1.6;
   }
 `;
@@ -109,23 +107,17 @@ const Skills = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
+    if (prefersReducedMotion) return;
     sr.reveal(revealTitle.current, srConfig());
-    revealSkills.current.forEach((ref, i) =>
-      sr.reveal(ref, srConfig(i * 100))
-    );
+    revealSkills.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, [prefersReducedMotion]);
 
   const skillCategories = Object.values(skillsData);
 
   return (
     <StyledSkillsSection id="skills" ref={revealTitle}>
-      <h2 className="numbered-heading">Skills & Technologies</h2>
-
-      <div className="skills-container">
+      <h2>Skills & Technologies</h2>
+      <StyledSkillsList>
         {skillCategories.map((category, i) => (
           <StyledSkillCategory key={i} ref={el => (revealSkills.current[i] = el)}>
             <StyledCategoryTitle>{category.title}</StyledCategoryTitle>
@@ -136,14 +128,12 @@ const Skills = () => {
             </StyledSkillsGrid>
           </StyledSkillCategory>
         ))}
-      </div>
-
+      </StyledSkillsList>
       <StyledHighlightSection ref={el => (revealSkills.current[skillCategories.length] = el)}>
         <h3>Specialized in AI/ML Engineering</h3>
         <p>
-          Passionate about building intelligent systems with expertise in LLMs, RAG systems, 
-          computer vision, and end-to-end machine learning pipelines. Always exploring the 
-          latest in generative AI and multimodal applications.
+          Building intelligent systems with LLMs, RAG, computer vision, and ML pipelines.
+          Exploring generative AI and multimodal applications.
         </p>
       </StyledHighlightSection>
     </StyledSkillsSection>

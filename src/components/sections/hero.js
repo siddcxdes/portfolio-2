@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { navDelay, loaderDelay } from '../../utils';
 import { usePrefersReducedMotion } from '../../hooks';
+
+const blink = keyframes`
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+`;
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -29,6 +34,30 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  h2 {
+    display: flex;
+    align-items: center;
+    font-size: clamp(40px, 8vw, 80px); // <-- set a large, responsive size
+    font-weight: 700;
+    color: var(--lightest-slate);
+    font-family: var(--font-sans);
+    margin: 0;
+    min-height: 3.2rem;
+    letter-spacing: -1px;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 1ch;
+    background: none;
+    color: var(--green);
+    font-weight: 700;
+    font-size: inherit; 
+    line-height: 1;
+    margin-left: 2px;
+    animation: ${blink} 1s steps(1) infinite;
+  }
+
   h3 {
     margin-top: 5px;
     color: var(--slate);
@@ -46,31 +75,56 @@ const StyledHeroSection = styled.section`
   }
 `;
 
+const TYPING_SPEED = 80; // ms per character
+
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [typedName, setTypedName] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
+
+  const fullName = 'Sidheshwar Sharma.';
 
   useEffect(() => {
     if (prefersReducedMotion) {
+      setTypedName(fullName);
+      setShowCursor(true);
       return;
     }
 
+    let timeout;
+    if (isMounted && typedName.length < fullName.length) {
+      timeout = setTimeout(() => {
+        setTypedName(fullName.slice(0, typedName.length + 1));
+      }, TYPING_SPEED);
+    } else if (typedName.length === fullName.length) {
+      setShowCursor(true);
+    }
+    return () => clearTimeout(timeout);
+  }, [isMounted, typedName, prefersReducedMotion, fullName]);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setIsMounted(true);
+      return;
+    }
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [prefersReducedMotion]);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Sidheshwar Sharma.</h2>;
+  const two = (
+    <h2>
+      {typedName}
+      <span className="cursor">{showCursor ? '|' : ''}</span>
+    </h2>
+  );
   const three = <h3 className="big-heading">I build intelligent AI systems.</h3>;
   const four = (
     <>
       <p>
         I'm an AI/ML Engineer specializing in Large Language Models, RAG, multimodal AI, and Data Science. 
-        Currently, I'm focused on building intelligent systems that solve real-world problems at{' '}
-        <a href="https://www.drdo.gov.in/" target="_blank" rel="noreferrer">
-          DRDO
-        </a>
-        .
+        Currently, I'm focused on building intelligent systems that solve real-world problems as a freelancer.
       </p>
     </>
   );

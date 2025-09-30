@@ -4,7 +4,7 @@ export const jobsData = [
     node: {
       frontmatter: {
         title: "Machine Learning Intern",
-        company: "DRDO",
+        company: "DRDO-ACEM",
         location: "Nashik, India",
         range: "June 2025 – Present",
         url: "https://www.drdo.gov.in"

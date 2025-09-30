@@ -8,6 +8,7 @@ import { usePrefersReducedMotion } from '../../hooks';
 import { jobsData } from '../../data';
 
 const StyledJobsSection = styled.section`
+
   max-width: 700px;
 
   .inner {

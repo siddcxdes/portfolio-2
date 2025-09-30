@@ -138,8 +138,7 @@ const About = () => {
             </p>
 
             <p>
-              I specialize in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and multimodal AI applications. Currently, I'm working as a Machine Learning Intern at{' '}
-              <a href="https://www.drdo.gov.in/">Defence Research and Development Organisation (DRDO)</a>, where I design ML pipelines to predict material properties from experimental data with high accuracy.
+              I specialize in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and multimodal AI applications.
             </p>
 
             <p>
