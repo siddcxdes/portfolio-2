@@ -1,4 +1,3 @@
-// Static data to replace GraphQL queries
 export const jobsData = [
   {
     node: {
@@ -99,7 +98,7 @@ export const featuredData = [
     node: {
       frontmatter: {
         title: "Digital Medical Board",
-        cover: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        cover: "/doctor.png",
         github: "",
         external: "",
         tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"],
@@ -112,7 +111,7 @@ export const featuredData = [
     node: {
       frontmatter: {
         title: "TaskManager",
-        cover: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        cover: "/taskManager.png",
         github: "",
         external: "",
         tech: ["Python", "LLMs", "RAG", "Vector Databases", "Embeddings"],
@@ -125,7 +124,7 @@ export const featuredData = [
     node: {
       frontmatter: {
         title: "Ascension",
-        cover: "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        cover: "/ascension.png",
         github: "",
         external: "",
         tech: ["MERN Stack", "Agentic AI", "LLMs", "Gamification"],

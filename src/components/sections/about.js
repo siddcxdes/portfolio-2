@@ -157,7 +157,7 @@ const About = () => {
           <div className="wrapper">
             <img
               className="img"
-              src="https://picsum.photos/500/500?random=8"
+              src="/aboutme.png"
               width={500}
               alt="Sidheshwar Sharma"
             />
