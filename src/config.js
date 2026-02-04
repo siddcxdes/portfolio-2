@@ -10,14 +10,6 @@ module.exports = {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/sidheshwar-sharma-69242a27b/',
     },
-    {
-      name: 'LeetCode',
-      url: 'https://leetcode.com/u/sidheshwar23/',
-    },
-    {
-      name: 'GeeksforGeeks',
-      url: 'https://www.geeksforgeeks.org/user/user_85j0gs2rlny/',
-    },
   ],
 
   navLinks: [
