@@ -23,7 +23,7 @@ const StyledHeroSection = styled.section`
   }
 
   h1 {
-    margin: 0 0 30px 4px;
+    margin: 0 0 20px 4px;
     color: var(--green);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
@@ -37,45 +37,63 @@ const StyledHeroSection = styled.section`
   h2 {
     display: flex;
     align-items: center;
-    font-size: clamp(40px, 8vw, 80px); // <-- set a large, responsive size
-    font-weight: 700;
-    color: var(--lightest-slate);
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 800;
+    color: var(--white);
     font-family: var(--font-sans);
     margin: 0;
-    min-height: 3.2rem;
-    letter-spacing: -1px;
+    line-height: 1.1;
+    letter-spacing: -2px;
   }
 
   .cursor {
     display: inline-block;
-    width: 1ch;
-    background: none;
-    color: var(--green);
-    font-weight: 700;
-    font-size: inherit; 
-    line-height: 1;
-    margin-left: 2px;
-    animation: ${blink} 1s steps(1) infinite;
+    width: 6px;
+    height: 1em;
+    background: var(--green);
+    margin-left: 8px;
+    animation: ${blink} 1s step-end infinite;
   }
 
   h3 {
     margin-top: 5px;
-    color: var(--slate);
-    line-height: 0.9;
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: 800;
+    background: linear-gradient(to right, var(--slate) 0%, var(--light-slate) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    letter-spacing: -1px;
   }
 
   p {
-    margin: 20px 0 0;
-    max-width: 540px;
+    margin: 30px 0 0;
+    max-width: 560px;
+    font-size: var(--fz-lg);
+    line-height: 1.6;
+    color: var(--slate);
   }
 
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+    font-size: var(--fz-md);
+    padding: 18px 28px;
+    background: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+    border-radius: 4px;
+    transition: var(--transition);
+    
+    &:hover {
+      background: rgba(45, 212, 191, 0.1);
+      box-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
+      transform: translateY(-3px);
+    }
   }
 `;
 
-const TYPING_SPEED = 80; // ms per character
+const TYPING_SPEED = 80;
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -98,7 +116,7 @@ const Hero = () => {
         setTypedName(fullName.slice(0, typedName.length + 1));
       }, TYPING_SPEED);
     } else if (typedName.length === fullName.length) {
-      setShowCursor(true);
+      setShowCursor(true); // Keep cursor blinking after typing
     }
     return () => clearTimeout(timeout);
   }, [isMounted, typedName, prefersReducedMotion, fullName]);
@@ -116,15 +134,15 @@ const Hero = () => {
   const two = (
     <h2>
       {typedName}
-      <span className="cursor">{showCursor ? '|' : ''}</span>
+      <span className="cursor" />
     </h2>
   );
   const three = <h3 className="big-heading">I build intelligent AI systems.</h3>;
   const four = (
     <>
       <p>
-        I'm an AI/ML Engineer specializing in Large Language Models, RAG, multimodal AI, and Data Science. 
-        Currently, I'm focused on building intelligent systems that solve real-world problems as a freelancer.
+        I'm an AI/ML Engineer specializing in Large Language Models, RAG, multimodal AI, and Data Science.
+        Focused on building scalable, intelligent systems that solve real-world problems.
       </p>
     </>
   );

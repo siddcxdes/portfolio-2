@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import sr from '../../utils/sr';
 import { srConfig } from '../../config';
-import { Icon } from '../../components/icons';
+import { Icon } from '../icons';
 import { usePrefersReducedMotion } from '../../hooks';
 import { featuredData } from '../../data';
 

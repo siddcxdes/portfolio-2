@@ -8,8 +8,9 @@ import { usePrefersReducedMotion } from '../../hooks';
 import { jobsData } from '../../data';
 
 const StyledJobsSection = styled.section`
-
-  max-width: 700px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 0;
 
   .inner {
     display: flex;
@@ -18,9 +19,27 @@ const StyledJobsSection = styled.section`
       display: block;
     }
 
-    // Prevent container from jumping
     @media (min-width: 700px) {
       min-height: 340px;
+    }
+  }
+
+  h2 {
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: var(--lightest-slate);
+    text-align: center;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--green);
+      margin: 16px auto 0;
+      border-radius: 2px;
     }
   }
 `;
@@ -146,11 +165,19 @@ const StyledTabPanel = styled.div`
     ${({ theme }) => theme.mixins.fancyList};
   }
 
+  p {
+    font-size: var(--fz-lg);
+    line-height: 1.6;
+    color: var(--slate);
+    margin-bottom: 15px;
+  }
+
   h3 {
     margin-bottom: 2px;
-    font-size: var(--fz-xxl);
-    font-weight: 500;
+    font-size: 26px;
+    font-weight: 600;
     line-height: 1.3;
+    color: var(--lightest-slate);
 
     .company {
       color: var(--green);
@@ -161,7 +188,7 @@ const StyledTabPanel = styled.div`
     margin-bottom: 25px;
     color: var(--light-slate);
     font-family: var(--font-mono);
-    font-size: var(--fz-xs);
+    font-size: var(--fz-sm);
   }
 `;
 

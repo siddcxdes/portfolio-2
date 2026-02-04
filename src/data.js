@@ -18,12 +18,23 @@ export const projectsData = [
   {
     node: {
       frontmatter: {
+        title: "Prompt2Manim — Agentic AI System",
+        github: "",
+        external: "",
+        tech: ["Python", "LLMs", "Manim", "Agentic AI"]
+      },
+      html: "<p>Built a planner–executor agent translating natural language prompts into Manim animations using constrained JSON planning with validation layers for safe execution.</p>"
+    }
+  },
+  {
+    node: {
+      frontmatter: {
         title: "PDF Question Answering using RAG",
         github: "https://github.com/siddcxdes/pdf_question_answering",
         external: "",
-        tech: ["Python", "LangChain", "LlamaIndex", "OpenAI GPT-3.5", "Streamlit"]
+        tech: ["Python", "LangChain", "LlamaIndex", "OpenAI GPT-3.5"]
       },
-      html: "<p>Built a Retrieval-Augmented Generation system that answers queries from uploaded PDFs. Implemented embeddings, semantic search, and chunk parsing. Designed a responsive Streamlit UI.</p>"
+      html: "<p>Built a Retrieval-Augmented Generation system that answers queries from uploaded PDFs. Implemented embeddings, semantic search, and chunk parsing.</p>"
     }
   },
   {
@@ -40,34 +51,45 @@ export const projectsData = [
   {
     node: {
       frontmatter: {
-        title: "Sign Language Recognition System",
+        title: "Digital Medical Board",
+        github: "",
+        external: "",
+        tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"]
+      },
+      html: "<p>Built a multimodal health risk prediction system integrating clinical data, doctor notes, medical imaging, and genomics.</p>"
+    }
+  },
+  {
+    node: {
+      frontmatter: {
+        title: "Ascension — AI Productivity Platform",
+        github: "",
+        external: "",
+        tech: ["MERN Stack", "LLMs", "Agentic AI"]
+      },
+      html: "<p>Built a full-stack productivity platform with gamification and an agentic AI planner generating adaptive daily plans.</p>"
+    }
+  },
+  {
+    node: {
+      frontmatter: {
+        title: "Sign Lang — Real-Time Recognition",
         github: "https://github.com/siddcxdes/sign-language-detection",
         external: "",
-        tech: ["Python", "OpenCV", "MediaPipe", "Scikit-learn"]
+        tech: ["Python", "OpenCV", "MediaPipe", "ML"]
       },
-      html: "<p>Real-time gesture-to-text translator. 90%+ accuracy across 20+ gestures. Implemented live feedback for smooth user experience.</p>"
+      html: "<p>Built a real-time sign language recognition system using computer vision, achieving robust gesture classification.</p>"
     }
   },
   {
     node: {
       frontmatter: {
-        title: "Customer Churn Prediction",
+        title: "TaskManager — AI Workflow Agent",
         github: "",
         external: "",
-        tech: ["Python", "SQL", "Scikit-learn", "Random Forest", "Logistic Regression"]
+        tech: ["Python", "LLMs", "RAG", "Vector Databases"]
       },
-      html: "<p>Predicted customer churn from transaction + engagement data. Achieved 88% F1 score, provided retention insights.</p>"
-    }
-  },
-  {
-    node: {
-      frontmatter: {
-        title: "Recommender System for Personalized Learning",
-        github: "",
-        external: "",
-        tech: ["Python", "Surprise", "Matrix Factorization", "SQL"]
-      },
-      html: "<p>Designed collaborative filtering system. Improved recommendation accuracy by 20%. Integrated with SQL backend for scalability.</p>"
+      html: "<p>Built an AI workflow automation agent that converts unstructured documents into structured task plans using RAG and embeddings.</p>"
     }
   }
 ];
@@ -76,40 +98,40 @@ export const featuredData = [
   {
     node: {
       frontmatter: {
-        title: "PDF Question Answering using RAG",
-        cover: "https://picsum.photos/600/400?random=1",
-        github: "https://github.com/siddcxdes/pdf_question_answering",
+        title: "Digital Medical Board",
+        cover: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        github: "",
         external: "",
-        tech: ["Python", "LangChain", "LlamaIndex", "OpenAI GPT-3.5", "Streamlit"],
+        tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"],
         showInProjects: true
       },
-      html: "<p>Built a Retrieval-Augmented Generation system that answers queries from uploaded PDFs.</p><p>Implemented embeddings, semantic search, and chunk parsing.</p><p>Designed a responsive Streamlit UI.</p>"
+      html: "<p>A unified multimodal health risk prediction system capable of analyzing clinical data, doctor notes, medical imaging, and genomics data. Predicts risks for diabetes, kidney disease, cancer, and heart disease with high accuracy.</p>"
     }
   },
   {
     node: {
       frontmatter: {
-        title: "Automated Grammar Scoring Engine",
-        cover: "https://picsum.photos/600/400?random=2",
-        github: "https://github.com/siddcxdes/grammar_scoring_engine",
+        title: "TaskManager",
+        cover: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        github: "",
         external: "",
-        tech: ["Python", "Whisper", "spaCy", "DistilBERT", "Random Forest"],
+        tech: ["Python", "LLMs", "RAG", "Vector Databases", "Embeddings"],
         showInProjects: true
       },
-      html: "<p>Built speech-to-text grammar evaluation system.</p><p>Rated grammar fluency/correctness (0–5 scale).</p><p>Achieved R² = 0.94 alignment with expert scores.</p>"
+      html: "<p>An intelligent agent that ingests unstructured strategy documents (PDFs, docs) and autonomously converts them into structured, actionable task plans with deadlines and dependencies.</p>"
     }
   },
   {
     node: {
       frontmatter: {
-        title: "Sign Language Recognition System",
-        cover: "https://picsum.photos/600/400?random=3",
-        github: "https://github.com/siddcxdes/sign-language-detection",
+        title: "Ascension",
+        cover: "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+        github: "",
         external: "",
-        tech: ["Python", "OpenCV", "MediaPipe", "Scikit-learn"],
+        tech: ["MERN Stack", "Agentic AI", "LLMs", "Gamification"],
         showInProjects: true
       },
-      html: "<p>Real-time gesture-to-text translator.</p><p>90%+ accuracy across 20+ gestures.</p><p>Implemented live feedback for smooth user experience.</p>"
+      html: "<p>A gamified personal productivity platform featuring an AI Planner Agent that generates adaptive daily and weekly schedules based on user goals and performance metrics.</p>"
     }
   }
 ];
