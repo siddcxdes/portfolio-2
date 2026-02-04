@@ -18,7 +18,7 @@ export const projectsData = [
     node: {
       frontmatter: {
         title: "Prompt2Manim — Agentic AI System",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["Python", "LLMs", "Manim", "Agentic AI"]
       },
@@ -51,7 +51,7 @@ export const projectsData = [
     node: {
       frontmatter: {
         title: "Digital Medical Board",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"]
       },
@@ -62,7 +62,7 @@ export const projectsData = [
     node: {
       frontmatter: {
         title: "Ascension — AI Productivity Platform",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["MERN Stack", "LLMs", "Agentic AI"]
       },
@@ -84,7 +84,7 @@ export const projectsData = [
     node: {
       frontmatter: {
         title: "TaskManager — AI Workflow Agent",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["Python", "LLMs", "RAG", "Vector Databases"]
       },
@@ -99,7 +99,7 @@ export const featuredData = [
       frontmatter: {
         title: "Digital Medical Board",
         cover: "/doctor.png",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"],
         showInProjects: true
@@ -112,7 +112,7 @@ export const featuredData = [
       frontmatter: {
         title: "TaskManager",
         cover: "/taskManager.png",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["Python", "LLMs", "RAG", "Vector Databases", "Embeddings"],
         showInProjects: true
@@ -125,7 +125,7 @@ export const featuredData = [
       frontmatter: {
         title: "Ascension",
         cover: "/ascension.png",
-        github: "",
+        github: "https://github.com/siddcxdes",
         external: "",
         tech: ["MERN Stack", "Agentic AI", "LLMs", "Gamification"],
         showInProjects: true
