@@ -124,7 +124,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python', 'Machine Learning', 'Deep Learning', 'RAG', 'LLMs', 'Data Science'];
+  const skills = ['Python', 'FastAPI', 'PostgreSQL', 'REST APIs', 'LLMs', 'RAG'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -134,18 +134,18 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Sidheshwar and I'm an AI/ML Engineer passionate about building intelligent systems that solve real-world problems. My journey in artificial intelligence began when I discovered the power of machine learning to extract meaningful insights from data.
+              Hey! I'm Sidheshwar — a final-year CS student who likes building things end-to-end. I enjoy backend work because I get to see how systems actually come together — APIs, databases, auth, data flows, all of it.
             </p>
 
             <p>
-              I specialize in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and multimodal AI applications.
+              I started with Python and data science, then got into machine learning. Over time, I realized I enjoy the engineering side more than just training models. So now I focus on building backend systems and using AI where it genuinely adds value.
             </p>
 
             <p>
-              My expertise spans across the entire ML pipeline, from data preprocessing and feature engineering to model deployment. I have hands-on experience with various AI technologies including Hugging Face Transformers, LangChain, and vector databases like FAISS and Chroma.
+              I've worked with LLMs, RAG pipelines, and vector databases — but I treat them as tools, not the whole project. For me, AI is something I use to enhance products, not just for demos.
             </p>
 
-            <p>Here are a few technologies I've been working with recently:</p>
+            <p>A few things I work with regularly:</p>
           </div>
 
           <ul className="skills-list">

@@ -137,12 +137,12 @@ const Hero = () => {
       <span className="cursor" />
     </h2>
   );
-  const three = <h3 className="big-heading">I build intelligent AI systems.</h3>;
+  const three = <h3 className="big-heading">I build backend systems powered by AI.</h3>;
   const four = (
     <>
       <p>
-        I'm an AI/ML Engineer specializing in Large Language Models, RAG, multimodal AI, and Data Science.
-        Focused on building scalable, intelligent systems that solve real-world problems.
+        I'm a final-year CS student who enjoys building APIs, backend services, and data pipelines.
+        I use AI — like LLMs and RAG — to make those systems smarter, not just for demos.
       </p>
     </>
   );

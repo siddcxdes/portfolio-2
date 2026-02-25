@@ -2,13 +2,13 @@ export const jobsData = [
   {
     node: {
       frontmatter: {
-        title: "Machine Learning Intern",
+        title: "ML & Data Engineering Intern",
         company: "DRDO-ACEM",
         location: "Nashik, India",
-        range: "June 2025 – Present",
+        range: "June 2025 – Sept 2025",
         url: "https://www.drdo.gov.in"
       },
-      html: "<p>Designed ML pipelines to predict material properties from experimental data.</p><p>Applied feature engineering using physical equations and statistical methods.</p><p>Achieved strong accuracy (R² = 0.98 standard, 0.99 with Repeated K-Fold Cross Validation).</p><p>Contributed to an upcoming research paper with DRDO scientists.</p>"
+      html: "<p>Built machine learning pipelines to predict material properties using real-world experimental lab data.</p><p>Cleaned, processed, and prepared raw datasets. Applied feature engineering using physical and statistical methods.</p><p>Trained and evaluated regression models as part of an end-to-end ML workflow.</p><p>Tools used: Python, Scikit-learn, Pandas, NumPy.</p><p>Worked closely with DRDO scientists and contributed to ongoing research efforts.</p>"
     }
   }
 ];
@@ -22,18 +22,18 @@ export const projectsData = [
         external: "",
         tech: ["Python", "LLMs", "Manim", "Agentic AI"]
       },
-      html: "<p>Built a planner–executor agent translating natural language prompts into Manim animations using constrained JSON planning with validation layers for safe execution.</p>"
+      html: "<p>Built a planner–executor agent that turns natural language into Manim animations. Uses constrained JSON planning with validation layers for safe code execution.</p>"
     }
   },
   {
     node: {
       frontmatter: {
-        title: "PDF Question Answering using RAG",
+        title: "PDF Question Answering — RAG Pipeline",
         github: "https://github.com/siddcxdes/pdf_question_answering",
         external: "",
         tech: ["Python", "LangChain", "LlamaIndex", "OpenAI GPT-3.5"]
       },
-      html: "<p>Built a Retrieval-Augmented Generation system that answers queries from uploaded PDFs. Implemented embeddings, semantic search, and chunk parsing.</p>"
+      html: "<p>Built a RAG system that answers questions from uploaded PDFs. Handles document parsing, chunking, embeddings, and semantic search under the hood.</p>"
     }
   },
   {
@@ -44,7 +44,7 @@ export const projectsData = [
         external: "",
         tech: ["Python", "Whisper", "spaCy", "DistilBERT", "Random Forest"]
       },
-      html: "<p>Built speech-to-text grammar evaluation system. Rated grammar fluency/correctness (0–5 scale). Achieved R² = 0.94 alignment with expert scores.</p>"
+      html: "<p>Built a speech-to-text pipeline that evaluates grammar fluency and correctness on a 0–5 scale. Achieved R² = 0.94 alignment with expert human scores.</p>"
     }
   },
   {
@@ -55,7 +55,7 @@ export const projectsData = [
         external: "",
         tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"]
       },
-      html: "<p>Built a multimodal health risk prediction system integrating clinical data, doctor notes, medical imaging, and genomics.</p>"
+      html: "<p>Built a backend system that predicts health risks by combining clinical data, doctor notes, medical imaging, and genomics into one pipeline.</p>"
     }
   },
   {
@@ -66,7 +66,7 @@ export const projectsData = [
         external: "",
         tech: ["MERN Stack", "LLMs", "Agentic AI"]
       },
-      html: "<p>Built a full-stack productivity platform with gamification and an agentic AI planner generating adaptive daily plans.</p>"
+      html: "<p>Full-stack productivity app with gamification. Includes an AI planner agent that generates adaptive daily plans based on user goals.</p>"
     }
   },
   {
@@ -77,7 +77,7 @@ export const projectsData = [
         external: "",
         tech: ["Python", "OpenCV", "MediaPipe", "ML"]
       },
-      html: "<p>Built a real-time sign language recognition system using computer vision, achieving robust gesture classification.</p>"
+      html: "<p>Real-time sign language recognition system using computer vision. Handles gesture classification with solid accuracy.</p>"
     }
   },
   {
@@ -88,7 +88,7 @@ export const projectsData = [
         external: "",
         tech: ["Python", "LLMs", "RAG", "Vector Databases"]
       },
-      html: "<p>Built an AI workflow automation agent that converts unstructured documents into structured task plans using RAG and embeddings.</p>"
+      html: "<p>An AI agent that reads unstructured documents and converts them into structured task plans. Uses RAG and embeddings for context-aware processing.</p>"
     }
   }
 ];
@@ -104,7 +104,7 @@ export const featuredData = [
         tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"],
         showInProjects: true
       },
-      html: "<p>A unified multimodal health risk prediction system capable of analyzing clinical data, doctor notes, medical imaging, and genomics data. Predicts risks for diabetes, kidney disease, cancer, and heart disease with high accuracy.</p>"
+      html: "<p>A backend-driven health risk prediction system. Takes in clinical data, doctor notes, medical images, and genomics data — runs them through ML models to predict risks for diabetes, kidney disease, cancer, and heart conditions.</p>"
     }
   },
   {
@@ -117,7 +117,7 @@ export const featuredData = [
         tech: ["Python", "LLMs", "RAG", "Vector Databases", "Embeddings"],
         showInProjects: true
       },
-      html: "<p>An intelligent agent that ingests unstructured strategy documents (PDFs, docs) and autonomously converts them into structured, actionable task plans with deadlines and dependencies.</p>"
+      html: "<p>An AI agent that ingests messy strategy documents (PDFs, docs) and turns them into clean, structured task plans with deadlines and dependencies. Built with RAG for accurate context retrieval.</p>"
     }
   },
   {
@@ -130,41 +130,41 @@ export const featuredData = [
         tech: ["MERN Stack", "Agentic AI", "LLMs", "Gamification"],
         showInProjects: true
       },
-      html: "<p>A gamified personal productivity platform featuring an AI Planner Agent that generates adaptive daily and weekly schedules based on user goals and performance metrics.</p>"
+      html: "<p>A full-stack productivity platform with gamification features. Includes an AI Planner Agent that creates adaptive daily and weekly schedules based on user goals and past performance.</p>"
     }
   }
 ];
 
 export const skillsData = {
+  backend_systems: {
+    title: "Backend & Systems",
+    skills: ["FastAPI", "REST APIs", "PostgreSQL", "Authentication", "API Integration"]
+  },
+  ai_ml: {
+    title: "AI & ML",
+    skills: ["LLMs", "RAG", "LangChain", "Vector Databases", "OpenAI API"]
+  },
+  data_ml: {
+    title: "Data & ML",
+    skills: ["Feature Engineering", "Model Training", "Evaluation", "Pandas", "NumPy"]
+  },
+  tools: {
+    title: "Tools",
+    skills: ["Git", "Docker", "Streamlit", "Jupyter"]
+  },
   core: {
     title: "Core Technologies",
     skills: ["Python", "SQL", "C++", "Machine Learning", "Deep Learning", "Data Science"]
   },
-  ai_ml: {
-    title: "AI/ML Frameworks",
-    skills: ["TensorFlow", "Keras", "Scikit-learn", "Hugging Face", "LangChain", "LlamaIndex"]
-  },
-  generative_ai: {
-    title: "Generative AI & RAG",
-    skills: ["OpenAI API", "FAISS", "Chroma", "Vector Databases", "LLMs", "Retrieval-Augmented Generation"]
-  },
-  computer_vision: {
-    title: "Computer Vision & Multimodal",
-    skills: ["OpenCV", "MediaPipe", "Whisper", "Speech Recognition", "Image Processing"]
-  },
-  data_tools: {
-    title: "Data & Development Tools",
-    skills: ["Pandas", "NumPy", "Matplotlib", "Git", "Docker", "Streamlit", "Jupyter"]
-  },
-  algorithms: {
-    title: "ML Algorithms & Methods",
-    skills: ["Random Forest", "Gradient Boosting", "Regression", "Classification", "Ensemble Methods", "Feature Engineering"]
+  practices: {
+    title: "Engineering Practices",
+    skills: ["API Design", "Auth & Authorization", "Database Design", "System Architecture", "Error Handling", "Logging"]
   }
 };
 
 export const siteMetadata = {
   title: 'Sidheshwar Sharma',
-  description: 'Sidheshwar Sharma is an AI/ML Engineer specializing in Large Language Models, RAG, multimodal AI, and Data Science.',
+  description: 'Sidheshwar Sharma is a Backend + AI Engineer who builds APIs, backend systems, and AI-powered features.',
   siteUrl: 'https://sidheshwar-sharma.com',
   image: '/og.png',
   twitterUsername: '@sidheshwar23',
