@@ -50,12 +50,12 @@ export const projectsData = [
   {
     node: {
       frontmatter: {
-        title: "Digital Medical Board",
+        title: "AI Customer Support System",
         github: "https://github.com/siddcxdes",
         external: "",
-        tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"]
+        tech: ["Python", "FastAPI", "PostgreSQL", "Streamlit", "Ollama", "RAG"]
       },
-      html: "<p>Built a backend system that predicts health risks by combining clinical data, doctor notes, medical imaging, and genomics into one pipeline.</p>"
+      html: "<p>End-to-end customer support system with REST APIs for ticket creation, retrieval, and status tracking. Includes role-based access control, document ingestion, and semantic search via vector databases.</p>"
     }
   },
   {
@@ -90,6 +90,17 @@ export const projectsData = [
       },
       html: "<p>An AI agent that reads unstructured documents and converts them into structured task plans. Uses RAG and embeddings for context-aware processing.</p>"
     }
+  },
+  {
+    node: {
+      frontmatter: {
+        title: "Digital Medical Board",
+        github: "https://github.com/siddcxdes",
+        external: "",
+        tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"]
+      },
+      html: "<p>Built a backend system that predicts health risks by combining clinical data, doctor notes, medical imaging, and genomics into one pipeline. Predicts risks for diabetes, kidney disease, cancer, and heart conditions.</p>"
+    }
   }
 ];
 
@@ -97,14 +108,14 @@ export const featuredData = [
   {
     node: {
       frontmatter: {
-        title: "Digital Medical Board",
+        title: "AI Customer Support System",
         cover: "/doctor.png",
         github: "https://github.com/siddcxdes",
         external: "",
-        tech: ["Python", "FastAPI", "Streamlit", "NLP", "CV"],
+        tech: ["Python", "FastAPI", "PostgreSQL", "Streamlit", "Ollama", "RAG"],
         showInProjects: true
       },
-      html: "<p>A backend-driven health risk prediction system. Takes in clinical data, doctor notes, medical images, and genomics data — runs them through ML models to predict risks for diabetes, kidney disease, cancer, and heart conditions.</p>"
+      html: "<p>Designed and built an end-to-end customer support system with backend APIs and a frontend interface. Implemented REST APIs for ticket creation, retrieval, and status tracking. Integrated authentication and role-based access control. Used vector databases for document ingestion and semantic search via RAG with local LLMs (Ollama).</p>"
     }
   },
   {
